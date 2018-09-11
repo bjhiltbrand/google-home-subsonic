@@ -21,8 +21,8 @@ function streamSong($session, $song)
                     'items' => [
                         [
                             'simpleResponse' => [
-                                'textToSpeech' => $song['title'],
-                                ],
+                                'textToSpeech' => 'Playing ' . $song['title'],
+                            ],
                         ],
                         [
                             'mediaResponse' => [
@@ -43,7 +43,7 @@ function streamSong($session, $song)
                     ],
                     'suggestions' => [
                         [
-                            'title' => $song['album']// . ' by ' . $song['artist'], // this can only be 25 characters
+                            'title' => 'Play this album'
                         ],
                     ],
                 ],
