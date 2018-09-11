@@ -21,7 +21,7 @@ function streamSong($session, $song)
                     'items' => [
                         [
                             'simpleResponse' => [
-                                'textToSpeech' => ' ',
+                                'textToSpeech' => $song['title'],
                                 ],
                         ],
                         [
@@ -43,7 +43,7 @@ function streamSong($session, $song)
                     ],
                     'suggestions' => [
                         [
-                            'title' => $song['album'] . ' by ' . $song['artist'],
+                            'title' => $song['album']// . ' by ' . $song['artist'], // this can only be 25 characters
                         ],
                     ],
                 ],
@@ -79,7 +79,7 @@ function searchBySongArtist($session, $params)
         case 0:
             sendMessage([
                 'source' => 'subsonic',
-                'fulfillmentText' => 'Sorry, but I found no song.',
+                'fulfillmentText' => 'Sorry, but I didn\'t find any songs.',
             ]);
             break;
         default:
@@ -105,7 +105,7 @@ function nextSong($session, $params)
     {
         sendMessage([
             'source' => 'subsonic',
-            'fulfillmentText' => 'I\'m sorry, i ran out of songs.',
+            'fulfillmentText' => 'I\'m sorry, I ran out of songs.',
         ]);
     }
 
