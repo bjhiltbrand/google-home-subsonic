@@ -43,7 +43,7 @@ function streamSong($session, $song)
                     ],
                     'suggestions' => [
                         [
-                            'title' => $song['album'] . ' di ' . $song['artist'],
+                            'title' => $song['album'] . ' by ' . $song['artist'],
                         ],
                     ],
                 ],

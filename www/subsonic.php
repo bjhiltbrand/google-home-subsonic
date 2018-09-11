@@ -4,6 +4,8 @@
  * API documentation at http://www.subsonic.org/pages/api.jsp
  */
 
+include_once('/opt/random_compat/lib/random.php');
+
 class Subsonic
 {
 	protected $host;
@@ -55,8 +57,8 @@ class Subsonic
 			't' => md5($this->pass . $salt),
 			's' => $salt,
 			'f' => 'json',
-			'v' => '1.16.0',
-			'c' => 'uam',
+			'v' => '1.14.0',
+			'c' => 'Google Home',
 		];
 	}
 
@@ -178,32 +180,29 @@ class Subsonic
 	public function apiSearch($song, $artist, $count = 1)
 	{
 		$url = $this->generateUrlString(
-			'/rest/search',
+			'/rest/search3',
 			[
-				'artist' => $artist,
-				'title' => $song,
-				'count' => $count,
+				'query' => $song . ' ' . $artist,
 			]);
 
 		$obj = $this->makeRequest($url);
 		if($obj === null
-			|| !array_key_exists('searchResult', $obj)
-			|| !is_array($obj['searchResult']))
+			|| !array_key_exists('searchResult3', $obj))
 			return array();
 
-		$obj = $obj['searchResult'];
+		$obj = $obj['searchResult3'];
 
-		if(!array_key_exists('match', $obj))
+		if(!array_key_exists('song', $obj))
 			return array();
 
 		$rets = [];
-		foreach($obj['match'] as $i)
+		foreach($obj['song'] as $i)
 		{
 			if($i['isDir'] == true)
 				continue;
 
 			$i['url'] = $this->apiStream($i['id']);
-			$i['coverUrl'] = $this->apiGetCoverArt($i['id']);
+			$i['coverUrl'] = $this->apiGetCoverArt($i['coverArt']);
 			$rets[] = $i;
 		}
 
