@@ -13,11 +13,10 @@
         {
           "type": 0,
           "speech": [
-            "Non penso di seguirti. Potresti ripetere?",
-            "Potresti dirlo ancora una volta?",
-            "Potresti essere più specifico?",
-            "Non ho capito bene. Potresti ripetere?",
-            "Non ti ho sentito bene. Puoi ripetere?"
+            "Can you try again?",
+            "Can you be more specific?",
+            "Sorry, I missed that. Could you please try again?",
+            "I'm confused; could you repeat that please?"
           ]
         }
       ],

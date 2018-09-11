@@ -55,7 +55,7 @@
       "id": "c5eb08e5-33c9-43eb-844a-d6cda4d8c908",
       "data": [
         {
-          "text": "avanti"
+          "text": "next"
         }
       ],
       "isTemplate": false,
@@ -67,7 +67,7 @@
       "id": "88fff8a4-0f67-40cc-86bd-a3f61fab079e",
       "data": [
         {
-          "text": "prossima"
+          "text": "skip"
         }
       ],
       "isTemplate": false,
@@ -79,7 +79,7 @@
       "id": "e880ff76-ddaa-490c-b255-657eef5b376f",
       "data": [
         {
-          "text": "cambia canzone"
+          "text": "change song"
         }
       ],
       "isTemplate": false,
@@ -91,7 +91,7 @@
       "id": "bd7e0f7c-4a9b-4dda-8427-a09d240fd13b",
       "data": [
         {
-          "text": "canzone successiva"
+          "text": "next song"
         }
       ],
       "isTemplate": false,
@@ -103,7 +103,7 @@
       "id": "98ac87c4-b6de-49e8-848c-956bc212ce55",
       "data": [
         {
-          "text": "passa alla prossima"
+          "text": "skip to the next"
         }
       ],
       "isTemplate": false,
@@ -115,7 +115,7 @@
       "id": "0f79ef05-2c1e-4f16-9488-70320f08e889",
       "data": [
         {
-          "text": "prossima canzone"
+          "text": "skip song"
         }
       ],
       "isTemplate": false,
@@ -127,7 +127,7 @@
       "id": "f672828c-ca47-4ece-bfdd-1cc2c3f298a2",
       "data": [
         {
-          "text": "vai avanti"
+          "text": "go forward"
         }
       ],
       "isTemplate": false,

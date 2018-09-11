@@ -22,7 +22,7 @@
           "name": "song",
           "value": "$song",
           "prompts": [
-            "Dimmi il nome della canzone"
+            "Give me the name of a song"
           ],
           "isList": false
         },
@@ -33,7 +33,7 @@
           "name": "artist",
           "value": "$artist",
           "prompts": [
-            "Dimmi il nome dell'artista"
+            "Give me the name of an artist"
           ],
           "isList": false
         }
@@ -58,19 +58,19 @@
       "id": "aefd6827-9a6c-4071-a4b8-307f0c964261",
       "data": [
         {
-          "text": "Fammi sentire "
+          "text": "Let me hear "
         },
         {
-          "text": "canzone",
+          "text": "song",
           "alias": "song",
           "meta": "@sys.any",
           "userDefined": true
         },
         {
-          "text": " di "
+          "text": " by "
         },
         {
-          "text": "artista",
+          "text": "artist",
           "alias": "artist",
           "meta": "@sys.any",
           "userDefined": true
@@ -85,19 +85,19 @@
       "id": "d1708473-7d67-4d50-a461-7f73c11adb83",
       "data": [
         {
-          "text": "Metti "
+          "text": "Play "
         },
         {
-          "text": "canzone",
+          "text": "song",
           "alias": "song",
           "meta": "@sys.any",
           "userDefined": true
         },
         {
-          "text": " di "
+          "text": " by "
         },
         {
-          "text": "artista",
+          "text": "artist",
           "alias": "artist",
           "meta": "@sys.any",
           "userDefined": true
@@ -112,19 +112,19 @@
       "id": "11f56189-9afa-4d64-9f83-de640928ea2c",
       "data": [
         {
-          "text": "Riproduci "
+          "text": "I want to hear "
         },
         {
-          "text": "canzone",
+          "text": "song",
           "alias": "song",
           "meta": "@sys.any",
           "userDefined": true
         },
         {
-          "text": " di "
+          "text": " by "
         },
         {
-          "text": "artista",
+          "text": "artist",
           "alias": "artist",
           "meta": "@sys.any",
           "userDefined": true
