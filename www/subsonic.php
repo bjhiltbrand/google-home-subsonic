@@ -212,7 +212,7 @@ class Subsonic
 	/*
 	 * Looks up and returns the "next song" from a song id
 	 */
-	public function findNextSong($songId)
+	public function findNextSongByDirectory($songId, $startAtBeginning)
 	{
 		$curSong = $this->apiGetSong($songId);
 		if($curSong === null || !array_key_exists('parent', $curSong))
@@ -228,7 +228,7 @@ class Subsonic
 			if($i['isDir'] == true)
 				continue;
 
-			if($oldFound)
+			if($oldFound || $startAtBeginning)
 			{
 				$i['url'] = $this->apiStream($i['id']);
 				$i['coverUrl'] = $this->apiGetCoverArt($i['id']);
@@ -238,6 +238,12 @@ class Subsonic
 			if($i['id'] == $songId)
 				$oldFound = true;
 		}
+	}
+
+	public function findSongByArtist($artistId)
+	{
+		$artist = $this->apiMusicDirectory($artistId);
+		
 	}
 }
 

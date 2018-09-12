@@ -55,6 +55,8 @@ function streamSong($session, $song)
                 'lifespanCount' => 5,
                 'parameters' => [
                     "id" => $song['id'],
+                    "albumId" => $song['albumId'],
+                    "artistId" => $song['artistId']
                 ],
             ],
         ],
@@ -88,19 +90,19 @@ function searchBySongArtist($session, $params)
     }
 }
 
-function nextSong($session, $params)
+function playSongInCurrentSongsAlbum($session, $params, $startAtBeginning)
 {
     global $sub;
     if(!isset($params['id']))
     {
         sendMessage([
             'source' => 'subsonic',
-            'fulfillmentText' => 'Request problem: missing mandatory parameter.',
+            'fulfillmentText' => 'Request problem: missing mandatory parameter: id.',
         ]);
         return;
     }
 
-    $nextSong = $sub->findNextSong($params['id']);
+    $nextSong = $sub->findNextSongByDirectory($params['id'], $startAtBeginning);
     if($nextSong === null)
     {
         sendMessage([
@@ -109,6 +111,39 @@ function nextSong($session, $params)
         ]);
     }
 
+    streamSong($session, $nextSong);
+}
+
+function nextSong($session, $params)
+{
+    playSongInCurrentSongsAlbum($session, $params, false);
+}
+
+function playAlbum($session, $params)
+{
+    playSongInCurrentSongsAlbum($session, $params, true);       
+}
+
+function playArtist($session, $params)
+{
+    global $sub;
+    if (!isset($params["artistId"]))
+    {
+        sendMessage([
+            'source' => 'subsonic',
+            'fulfillmentText' => 'Request problem: missing mandatory parameter: artistId.',
+        ]);
+        return;
+    }
+
+    $nextSong = $sub->findSongByArtist($params['artistId']);
+    if($nextSong === null)
+    {
+        sendMessage([
+            'source' => 'subsonic',
+            'fulfillmentText' => 'I\'m sorry, I ran out of songs.',
+        ]);
+    }
     streamSong($session, $nextSong);
 }
 
@@ -132,13 +167,23 @@ function processMessage($request)
         return;
     }
 
-    switch($request['queryResult']['action'])
+    $action = $request['queryResult']['action'];
+    $session = $request['session'];
+    $params = $request['queryResult']['parameters'];
+
+    switch($action)
     {
         case 'search':
-            searchBySongArtist($request['session'], $request['queryResult']['parameters']);
+            searchBySongArtist($session, $params);
             return;
         case 'next':
-            nextSong($request['session'], $request['queryResult']['parameters']);
+            nextSong($session, $params);
+            return;
+        case 'playArtist':
+            playArtist($session, $params);
+            return;
+        case 'playAlbum':
+            playAlbum($session, $params);
             return;
         default:
             sendMessage([
