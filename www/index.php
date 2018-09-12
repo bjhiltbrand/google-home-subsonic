@@ -204,17 +204,28 @@ function sendMessage($parameters)
     echo $txt;
 }
 
-
-$input = file_get_contents('php://input');
-$request = json_decode($input, true);
+// begin auth
+$token = null;
 $headers = apache_request_headers();
-$authorized = false;
-if (isset($headers['Authorization']))
+if(isset($headers['Authorization']))
 {
+    $matches = array();
+    preg_match('/Token token="(.*)"/', $headers['Authorization'], $matches);
+    if(isset($matches[1]))
+    {
+        $token = $matches[1];
+    }
+}
+// end auth
+
+if ($token === $conf['token'])
+{    
+    $input = file_get_contents('php://input');
+    $request = json_decode($input, true);
+    
     processMessage($request);
 }
-
-if($authorized == false)
+else
 {
     sendMessage([
         'source' => 'subsonic',
