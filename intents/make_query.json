@@ -5,7 +5,7 @@
   "contexts": [],
   "responses": [
     {
-      "resetContexts": true,
+      "resetContexts": false,
       "action": "search",
       "affectedContexts": [
         {
@@ -17,12 +17,15 @@
       "parameters": [
         {
           "id": "233260f9-3ca0-4cfd-819d-7fef098377f3",
-          "required": true,
+          "required": false,
           "dataType": "@sys.any",
           "name": "song",
           "value": "$song",
           "prompts": [
-            "Give me the name of a song"
+            {
+              "lang": "en",
+              "value": "Give me the name of a song"
+            }
           ],
           "isList": false
         },
@@ -33,7 +36,10 @@
           "name": "artist",
           "value": "$artist",
           "prompts": [
-            "Give me the name of an artist"
+            {
+              "lang": "en",
+              "value": "Give me the name of an artist"
+            }
           ],
           "isList": false
         }
@@ -44,98 +50,9 @@
     }
   ],
   "priority": 500000,
-  "cortanaCommand": {
-    "navigateOrService": "NAVIGATE",
-    "target": ""
-  },
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1526748124,
+  "lastUpdate": 1536694099,
   "fallbackIntent": false,
-  "events": [],
-  "userSays": [
-    {
-      "id": "aefd6827-9a6c-4071-a4b8-307f0c964261",
-      "data": [
-        {
-          "text": "Let me hear "
-        },
-        {
-          "text": "song",
-          "alias": "song",
-          "meta": "@sys.any",
-          "userDefined": true
-        },
-        {
-          "text": " by "
-        },
-        {
-          "text": "artist",
-          "alias": "artist",
-          "meta": "@sys.any",
-          "userDefined": true
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 1526747883,
-      "isAuto": false
-    },
-    {
-      "id": "d1708473-7d67-4d50-a461-7f73c11adb83",
-      "data": [
-        {
-          "text": "Play "
-        },
-        {
-          "text": "song",
-          "alias": "song",
-          "meta": "@sys.any",
-          "userDefined": true
-        },
-        {
-          "text": " by "
-        },
-        {
-          "text": "artist",
-          "alias": "artist",
-          "meta": "@sys.any",
-          "userDefined": true
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 1526747883,
-      "isAuto": false
-    },
-    {
-      "id": "11f56189-9afa-4d64-9f83-de640928ea2c",
-      "data": [
-        {
-          "text": "I want to hear "
-        },
-        {
-          "text": "song",
-          "alias": "song",
-          "meta": "@sys.any",
-          "userDefined": true
-        },
-        {
-          "text": " by "
-        },
-        {
-          "text": "artist",
-          "alias": "artist",
-          "meta": "@sys.any",
-          "userDefined": true
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 1526747883,
-      "isAuto": false
-    }
-  ],
-  "followUpIntents": [],
-  "templates": []
+  "events": []
 }

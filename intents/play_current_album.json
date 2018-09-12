@@ -1,6 +1,6 @@
 {
-  "id": "10f90859-6b01-42b7-8a2c-0e4deb0abc85",
-  "name": "make_next",
+  "id": "4d67eed9-a24b-4486-b23d-b3e49b44755e",
+  "name": "play_current_album",
   "auto": true,
   "contexts": [
     "playing"
@@ -8,7 +8,7 @@
   "responses": [
     {
       "resetContexts": false,
-      "action": "next",
+      "action": "playAlbum",
       "affectedContexts": [
         {
           "name": "playing",
@@ -18,7 +18,7 @@
       ],
       "parameters": [
         {
-          "id": "c68d21ef-bdce-4e4d-9d33-ce18cf2cbd41",
+          "id": "f365834d-abc6-48f9-89d2-e34b74799864",
           "required": true,
           "dataType": "@sys.any",
           "name": "id",
@@ -40,11 +40,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1526938737,
+  "lastUpdate": 1536758742,
   "fallbackIntent": false,
-  "events": [
-    {
-      "name": "actions_intent_MEDIA_STATUS"
-    }
-  ]
+  "events": []
 }

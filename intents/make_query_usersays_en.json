@@ -1,0 +1,140 @@
+[
+  {
+    "id": "88431bd2-8be8-4591-9a5a-a504be31189a",
+    "data": [
+      {
+        "text": "I want to hear some ",
+        "userDefined": false
+      },
+      {
+        "text": "artist",
+        "alias": "artist",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1536694099
+  },
+  {
+    "id": "2f995036-fdbf-4538-a779-bfb63115e539",
+    "data": [
+      {
+        "text": "Shuffle ",
+        "userDefined": false
+      },
+      {
+        "text": "artist",
+        "alias": "artist",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1536694099
+  },
+  {
+    "id": "47df7666-bcc1-48bf-a725-7af511d6f5a1",
+    "data": [
+      {
+        "text": "Shuffle songs by ",
+        "userDefined": false
+      },
+      {
+        "text": "artist",
+        "alias": "artist",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1536694099
+  },
+  {
+    "id": "5cf9a320-ee4a-4fd3-a6eb-955b7855c256",
+    "data": [
+      {
+        "text": "Let me hear ",
+        "userDefined": false
+      },
+      {
+        "text": "song",
+        "alias": "song",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " by ",
+        "userDefined": false
+      },
+      {
+        "text": "artist",
+        "alias": "artist",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526747883
+  },
+  {
+    "id": "7bdada78-f8a3-4865-94f7-ebdfa1b3e9b7",
+    "data": [
+      {
+        "text": "Play ",
+        "userDefined": false
+      },
+      {
+        "text": "song",
+        "alias": "song",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " by ",
+        "userDefined": false
+      },
+      {
+        "text": "artist",
+        "alias": "artist",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526747883
+  },
+  {
+    "id": "79b31431-fad1-4b1e-a323-6176d27c06f2",
+    "data": [
+      {
+        "text": "I want to hear ",
+        "userDefined": false
+      },
+      {
+        "text": "song",
+        "alias": "song",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " by ",
+        "userDefined": false
+      },
+      {
+        "text": "artist",
+        "alias": "artist",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526747883
+  }
+]

@@ -1,5 +1,5 @@
 {
-  "id": "5ed0632e-7c5c-478c-951f-f980fde41724",
+  "id": "f77d1a5a-7a28-4243-880d-ea367ccd533d",
   "name": "Default Welcome Intent",
   "auto": true,
   "contexts": [],
@@ -12,8 +12,10 @@
       "messages": [
         {
           "type": 0,
+          "lang": "en",
           "speech": [
-            "Hi! Give me a song or an artist that you'd like to hear"
+            "Hi! Give me a song or an artist that you\u0027d like to hear",
+            "Name a song or artist"
           ]
         }
       ],
@@ -24,14 +26,11 @@
   "priority": 500000,
   "webhookUsed": false,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1526747942,
+  "lastUpdate": 1536696833,
   "fallbackIntent": false,
   "events": [
     {
       "name": "WELCOME"
     }
-  ],
-  "userSays": [],
-  "followUpIntents": [],
-  "templates": []
+  ]
 }

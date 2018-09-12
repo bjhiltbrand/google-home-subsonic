@@ -1,5 +1,5 @@
 {
-  "id": "e8b9b66f-6053-4305-a6d0-81eb4bd4af76",
+  "id": "42a2d2c8-bd89-4c35-838e-62ac1cb1f61c",
   "name": "Default Fallback Intent",
   "auto": true,
   "contexts": [],
@@ -12,11 +12,12 @@
       "messages": [
         {
           "type": 0,
+          "lang": "en",
           "speech": [
             "Can you try again?",
             "Can you be more specific?",
             "Sorry, I missed that. Could you please try again?",
-            "I'm confused; could you repeat that please?"
+            "I\u0027m confused; could you repeat that please?"
           ]
         }
       ],
@@ -28,8 +29,5 @@
   "webhookUsed": false,
   "webhookForSlotFilling": false,
   "fallbackIntent": true,
-  "events": [],
-  "userSays": [],
-  "followUpIntents": [],
-  "templates": []
+  "events": []
 }
