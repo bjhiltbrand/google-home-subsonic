@@ -121,6 +121,7 @@ function nextSong($session, $params)
 
 function playAlbum($session, $params)
 {
+    //todo: support 'next' album?
     playSongInCurrentSongsAlbum($session, $params, true);       
 }
 
@@ -135,6 +136,8 @@ function playArtist($session, $params)
         ]);
         return;
     }
+
+    //todo: check for $params['shuffle'] (or random), then use array_rand to choose next song
 
     $nextSong = $sub->findSongByArtist($params['artistId']);
     if($nextSong === null)
@@ -204,5 +207,17 @@ function sendMessage($parameters)
 
 $input = file_get_contents('php://input');
 $request = json_decode($input, true);
+$headers = apache_request_headers();
+$authorized = false;
+if (isset($headers['Authorization']))
+{
+    processMessage($request);
+}
 
-processMessage($request);
+if($authorized == false)
+{
+    sendMessage([
+        'source' => 'subsonic',
+        'fulfillmentText' => 'Sorry, but you aren\'t authorized.'
+    ]);
+}

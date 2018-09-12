@@ -228,7 +228,7 @@ class Subsonic
 			if($i['isDir'] == true)
 				continue;
 
-			if($oldFound || $startAtBeginning)
+			if($startAtBeginning || $oldFound)
 			{
 				$i['url'] = $this->apiStream($i['id']);
 				$i['coverUrl'] = $this->apiGetCoverArt($i['id']);
